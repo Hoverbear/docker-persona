@@ -32,11 +32,19 @@ docker run -it \
 ```
 
 
-Then, Persona:
+Then, Persona (not all ports required):
 
 ```bash
-docker run --publish=10001:10001 \
+docker run --publish=10000:10000 \
+           --publish=10001:10001 \
            --publish=10002:10002 \
+           --publish=10003:10003 \
+           --publish=10004:10004 \
+           --publish=10005:10005 \
+           --publish=10006:10006 \
+           --publish=10007:10007 \
+           --publish=10010:10010 \
+           --publish=10011:10011 \
            --name=persona \
            --hostname=persona.localhost \
            --env-file=$(pwd)/envfile \
@@ -82,11 +90,14 @@ FLUSH PRIVILEGES;
 
 Create a file containing any environment settings you might want.
 
+Find documentation on settings: [here](https://github.com/mozilla/persona/blob/dev/lib/configuration.js)
+
 Example envfile:
 
 ```bash
 CONFIG_FILES=/home/persona/config/config.json
-HOST=127.0.0.1
+HOST=0.0.0.0
+IP_ADDRESS=0.0.0.0
 MYSQL_USER=browserid
 MYSQL_PASSWORD=browserid
 DATABASE_NAME=browserid

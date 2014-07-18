@@ -25,6 +25,28 @@ RUN touch /home/persona/config/placeholder
 VOLUME ['/home/persona/config/']
 
 
+# Ports to Expose
+# verifier
+EXPOSE 10000
+# keysigner
+EXPOSE 10001
+# router
+EXPOSE 10002
+# keysigner
+EXPOSE 10003
+# dbwriter
+EXPOSE 10004
+# example_primary
+EXPOSE 10005
+# proxy
+EXPOSE 10006
+# browserid
+EXPOSE 10007
+# static
+EXPOSE 10010
+# example_delegated_primary
+EXPOSE 10011
+
 # Default options.
 CMD ["start"]
 ENTRYPOINT ["npm"]
